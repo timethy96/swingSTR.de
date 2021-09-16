@@ -20,12 +20,11 @@ $lang = 'de';
 <body>
     <header>
         <h1>swingSTR | Der offene Swing-Event-Kalender für Stuttgart und Umgebung</h1>
-        <a id="add_event" href="javascript:">-> Event eintragen <-</a>
+        <a id="add_event" href="javascript:">Event eintragen</a>
     </header>
     <div id="gcal">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FBerlin&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=a2phNzRsMzEwZDVzZzZybnBjbnMzOGszZmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bnFqM3EydGFxbTFhaWtlNGk2b3B2bHQzN29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YTJ2aXBkYmI3Z2hzZGs3MXNmYmx2aXZzM2tAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a29udGFrdEBzd2luZy1zdHV0dGdhcnQuZGU&src=c3dpbmdhbmRjYWtlQGdtYWlsLmNvbQ&color=%2333B679&color=%23D81B60&color=%237CB342&color=%23795548&color=%23EF6C00&color=%239E69AF&showTitle=0" style="border-width:0" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=kja74l310d5sg6rnpcns38k3fk@group.calendar.google.com&src=kontakt@swing-stuttgart.de&src=swingandcake@gmail.com&src=nqj3q2taqm1aike4i6opvlt37o@group.calendar.google.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
     </div>
-
     <footer>
         <a id="more_info" href="javascript:">Mehr Infos</a>
         <a id="imprint" href="javascript:">Impressum</a>

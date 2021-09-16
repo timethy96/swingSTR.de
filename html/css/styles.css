@@ -1,4 +1,5 @@
 html,body {
+    width: 100%;
     height: 100vh;
     color: #000;
     font-weight: 900;
@@ -6,8 +7,6 @@ html,body {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     background-color: #000;
 }
 
@@ -40,7 +39,8 @@ h1 {
 }
 
 #gcal {
-    height: 100%;
+    height: 80vh;
+    max-height: 1000px;
     width: 95%;
     margin: auto;
 }
@@ -49,6 +49,7 @@ h1 {
     width:100%;
     height: 100%;
     border-radius: 5px;
+    border:hidden;
 }
 
 footer {
