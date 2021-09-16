@@ -36,7 +36,7 @@ $lang = 'de';
 
 <body>
     <header>
-        <h1>swingSTR | Der offene Swing-Event-Kalender für Stuttgart und Umgebung</h1>
+        <h1>swing<span class="white">STR</span> | Der offene Swing-Event-Kalender für Stuttgart und Umgebung</h1>
         <a id="add_event" href="javascript:">Event eintragen</a>
     </header>
     <div id="gcal">

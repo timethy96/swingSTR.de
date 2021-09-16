@@ -33,7 +33,7 @@ h1 {
     vertical-align: middle;
     border: 10px solid #000;
     text-align: center;
-    background-color: silver;
+    background-color: #EEE;
     color: #000;
     text-decoration: none;
 }
@@ -78,7 +78,7 @@ footer {
     left: 0;
     right:0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
 }
 
@@ -100,4 +100,8 @@ footer {
     color: gold;
     font-size: 2em;
     text-decoration: none;
+}
+
+.white {
+    color: #EEE;
 }
