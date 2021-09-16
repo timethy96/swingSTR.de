@@ -1,3 +1,5 @@
+<?php
+?>
 <div id="legal">
     <h2>Impressum</h2><p>Angaben gemäß § 5 TMG</p><p>Timo Bilhöfer <br> 
     Boslerstraße 19<br> 
@@ -36,3 +38,4 @@
     After opening a website where an Offen installation is active, you can explicitly opt in to the data collection and thereby help to improve the services you use. Only then you will be assigned a user and a session ID using a cookie. Offen handles these IDs in an unrecognizable form.
         <br/><br/><br/><br/>
 </div>
+<?php

@@ -1,3 +1,5 @@
+<?php
+?>
 <h2>swingSTR | Der offene Swing-Event-Kalender für Stuttgart und Umgebung</h2>
 <p>
     In diesem offenen Kalender kann jede*r die Events eintragen, die er*sie veranstaltet, oder nur von denen er*sie gehört hat.<br/>
@@ -10,3 +12,4 @@
     Die swingSTR-Seite wird von Timo Bilhöfer entwickelt und kostenlos zur Verfügung gestellt. Wenn du für den Fortbestand und die Weiterentwicklung des Kalenders spenden möchtest, kannst du das hier tun: <a href="https://liberapay.com/timethy96/donate" target="_blank"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
     
 </p>
+<?php
