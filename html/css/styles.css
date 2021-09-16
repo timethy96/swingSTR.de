@@ -39,8 +39,8 @@ h1 {
 }
 
 #gcal {
-    height: 80vh;
-    max-height: 1000px;
+    height: calc(100vh - 80px);
+    max-height: 800px;
     width: 95%;
     margin: auto;
 }
