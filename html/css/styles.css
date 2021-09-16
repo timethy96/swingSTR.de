@@ -1,0 +1,103 @@
+html,body {
+    width: 100%;
+    height: 100vh;
+    color: #000;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+}
+
+header {
+    display: table;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    color: gold;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    display: table-cell;
+    font-size: 1.2em;
+    font-weight: 900;
+    vertical-align: bottom;
+    border: 10px solid #000;
+}
+
+#add_event {
+    display: table-cell;
+    vertical-align: middle;
+    border: 10px solid #000;
+    text-align: center;
+    background-color: silver;
+    color: #000;
+    text-decoration: none;
+}
+
+#gcal {
+    height: 100%;
+    width: 95%;
+    margin: auto;
+}
+
+#gcal iframe {
+    width:100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    display: table;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    color: gold;
+    margin: 0;
+}
+
+#more_info, #imprint {
+    color: gold;
+    display: table-cell;
+    border: 10px solid #000;
+    text-decoration: none;
+}
+
+#imprint {
+    text-align: right;
+}
+
+#overlay {
+    position:absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+#overlay_content{
+    position:absolute;
+    top:10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background-color: #FFF;
+    padding: 5%;
+    overflow: scroll;
+}
+
+#close_overlay {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: gold;
+    font-size: 2em;
+    text-decoration: none;
+}

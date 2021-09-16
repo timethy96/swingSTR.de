@@ -1,0 +1,19 @@
+version: '3'
+  
+services:
+    swingSTR:
+        container_name: swingSTR-alpha
+        image: php:apache
+        expose:
+            - 80
+        volumes:
+            - ./html:/var/www/html
+        restart: unless-stopped
+        environment:
+            VIRTUAL_HOST: alpha.swingstr.de
+            LETSENCRYPT_HOST: alpha.swingstr.de
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
