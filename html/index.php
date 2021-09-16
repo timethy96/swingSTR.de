@@ -11,7 +11,24 @@ $lang = 'de';
     <title>swingSTR | Der offene Swing-Kalender für Stuttgart</title>
     <meta name="description" content="swingSTR | Der offene Swing-Event-Kalender für Stuttgart und Umgebung | Swing | Lindy Hop | Charleston | Solo Jazz | Balboa | Shag | Boogie Woogie">
     <meta name="author" content="Timo Bilhöfer">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <meta property="og:image:width" content="279">
+    <meta property="og:image:height" content="279">
+    <meta property="og:image" content="https://swingSTR.de/og/og-image.jpg">
+    <meta property="og:description" content="swingSTR | Der offene Swing-Event-Kalender f&uuml;r Stuttgart und Umgebung | Swing | Lindy Hop | Charleston | Solo Jazz | Balboa | Shag | Boogie Woogie">
+    <meta property="og:title" content="swingSTR | Der offene Swing-Kalender f&uuml;r Stuttgart">
+    <meta property="og:url" content="swingSTR.de">
+    <link rel="apple-touch-icon" sizes="180x180" href="/og/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/og/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/og/favicon-16x16.png">
+    <link rel="manifest" href="/og/site.webmanifest">
+    <link rel="mask-icon" href="/og/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/og/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="swingSTR">
+    <meta name="application-name" content="swingSTR">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/og/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
 
     <link rel="stylesheet" href="css/styles.css?v=<?php echo filemtime('css/styles.css') ?>">
 
