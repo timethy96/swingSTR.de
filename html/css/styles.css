@@ -7,14 +7,14 @@ html,body {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #222;
 }
 
 header {
     display: table;
     width: 100%;
     height: 40px;
-    background-color: #000;
+    background-color: #222;
     color: gold;
     margin: 0;
     position: relative;
@@ -25,18 +25,22 @@ h1 {
     font-size: 1.2em;
     font-weight: 900;
     vertical-align: bottom;
-    border: 10px solid #000;
+    border: 10px solid #222;
+}
+
+h2 {
+    margin-top: 0;
 }
 
 #add_event {
     display: table-cell;
     vertical-align: middle;
-    border: 10px solid #000;
-    text-align: center;
-    background-color: #EEE;
-    color: #000;
-    text-decoration: none;
+    border: 10px solid #222;
+    text-align: right;
+    color: #EEE;
+    font-size: 1.2em;
 }
+
 
 #gcal {
     height: calc(100vh - 80px);
@@ -56,7 +60,7 @@ footer {
     display: table;
     width: 100%;
     height: 40px;
-    background-color: #000;
+    background-color: #222;
     color: gold;
     margin: 0;
 }
@@ -64,7 +68,7 @@ footer {
 #more_info, #imprint {
     color: gold;
     display: table-cell;
-    border: 10px solid #000;
+    border: 10px solid #222;
     text-decoration: none;
 }
 
@@ -104,4 +108,84 @@ footer {
 
 .white {
     color: #EEE;
+}
+
+
+form {
+    width:100%;
+    position: relative;
+    margin: auto;
+}
+
+label, input, textarea {
+    display: block;
+    width: 296px;
+    margin: auto;
+}
+
+label {
+    margin-top: 20px;
+}
+
+input, textarea {
+    margin-top:2px;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    width: auto;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    background-color: #EEE;
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+textarea {
+    height:auto;
+}
+
+#h-captcha {
+    width: 303px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#cat_tabs {
+    width: auto;
+    margin: 10px;
+}
+
+.cat_tab {
+    color: #EEE;
+    width: 20%;
+    border-bottom: 3px solid #EEE;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.cat_tab.active {
+    border-bottom: 3px solid gold;
+    color: #EEE;
+}
+
+#add_errors {
+    color: red;
+}
+
+.tiny {
+    font-size: 0.8em;
+    color: grey;
+}
+
+
+@media screen and (max-width: 900px) {
+    form {
+        width:90%;
+    }
 }

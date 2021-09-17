@@ -1,9 +1,8 @@
 version: '3'
   
 services:
-    swingSTR:
-        container_name: swingSTR
-        image: php:apache
+    swingstr:
+        build: ./php
         expose:
             - 80
         volumes:
@@ -12,6 +11,45 @@ services:
         environment:
             VIRTUAL_HOST: swingstr.de
             LETSENCRYPT_HOST: swingstr.de
+            MYSQL_DATABASE: swingSTR
+            MYSQL_USER: swingSTR
+            MYSQL_PASSWORD_FILE: /run/secrets/db_password
+            HCAPTCHA_KEY_FILE: /run/secrets/hcaptcha_key
+            SWINGSTR_USERS_FILE: /run/secrets/swingSTR_users
+            SMTP_PASSWORD_FILE: /run/secrets/smtp_password
+        secrets:
+            - db_password
+            - smtp_password
+            - hcaptcha_key
+            - swingSTR_users
+
+    swingstr_db:
+        image: mysql:latest
+        expose:
+            - 3306
+        volumes:
+            - ./db:/var/lib/mysql
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+        depends_on:
+            - swingstr
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: '1'
+            MYSQL_DATABASE: swingSTR
+            MYSQL_USER: swingSTR
+            MYSQL_PASSWORD_FILE: /run/secrets/db_password
+        restart: unless-stopped
+        secrets:
+            - db_password
+
+secrets:
+  db_password:
+    file: ../secrets/swingSTR_db
+  smtp_password:
+    file: ../secrets/swingSTR_smtp
+  hcaptcha_key:
+    file: ../secrets/hcaptcha_key
+  swingSTR_users:
+    file: ../secrets/swingSTR_users
 
 networks:
   default:

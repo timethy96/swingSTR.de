@@ -39,9 +39,16 @@ $lang = 'de';
         <h1>swing<span class="white">STR</span> | Der offene Swing-Event-Kalender für Stuttgart und Umgebung</h1>
         <a id="add_event" href="javascript:">Event eintragen</a>
     </header>
-    <div id="gcal">
-    <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=kja74l310d5sg6rnpcns38k3fk@group.calendar.google.com&src=kontakt@swing-stuttgart.de&src=swingandcake@gmail.com&src=nqj3q2taqm1aike4i6opvlt37o@group.calendar.google.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
+
+    <div id="cat_tabs">
+        <a class="cat_tab active" id="tab_events" href="javascript:">Events</a>
+        <a class="cat_tab" id="tab_kurse" href="javascript:">Kurse</a>
     </div>
+
+    <div id="gcal">
+        <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=kja74l310d5sg6rnpcns38k3fk@group.calendar.google.com&src=kontakt@swing-stuttgart.de&src=swingandcake@gmail.com&src=nqj3q2taqm1aike4i6opvlt37o@group.calendar.google.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
+    </div>
+
     <footer>
         <a id="more_info" href="javascript:">Mehr Infos</a>
         <a id="imprint" href="javascript:">Impressum</a>
@@ -53,6 +60,8 @@ $lang = 'de';
     </div>
 
     <script async src="https://offen.bilhoefer.de/script.js" data-account-id="a35c2236-3301-4a02-a1fd-4a6965b2706a"></script>
+    <script src="https://js.hcaptcha.com/1/api.js?hl=de&render=explicit" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

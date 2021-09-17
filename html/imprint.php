@@ -14,6 +14,9 @@
     Website Impressum teilweise von <a href="https://www.impressum-generator.de">impressum-generator.de</a>
 
     <h3>Website Analytics</h3>
+
+    <a href="https://offen.bilhoefer.de/auditorium"><img src="https://offen.bilhoefer.de/user-access-widget-bar-en.svg"></a><br/><br/>
+
     We use Offen for collecting usage data on this website and only access your usage data with your consent. Your data always remains yours. You can review and delete it at any time. Opt out again whenever you want.<br/><br/>
     
     How can I review and delete my usage data?<br/>
