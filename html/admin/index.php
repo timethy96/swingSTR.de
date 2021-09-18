@@ -109,11 +109,19 @@ if ($conn->connect_error) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    $sql = "SELECT * FROM swingstrdb WHERE estat != 0";
+    $sql = "SELECT * FROM swingstrdb WHERE estat = 1";
 
-    $oldEvents = $conn->query($sql);
+    $accEvents = $conn->query($sql);
 
-    if (!$oldEvents) {
+    if (!$accEvents) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $sql = "SELECT * FROM swingstrdb WHERE estat = 2";
+
+    $denEvents = $conn->query($sql);
+
+    if (!$denEvents) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
@@ -155,25 +163,56 @@ if ($conn->connect_error) {
     }
     ?>
     <h2>Beantwortete Anfragen</h2>
-    <?php
-    foreach ($oldEvents as $event) {
-        ?>
-        <div class="event_card" data-id="<?php echo $event['id']; ?>">
-            <div class="event_description">
-                <ul>
-                    <li>Event Name: <?php echo $event["ename"]; ?></li>
-                    <li>Start: <?php echo $event["estart"]; ?></li>
-                    <li>Ende: <?php echo $event["eend"]; ?></li>
-                    <li>Ort: <?php echo $event["eplace"]; ?></li>
-                    <li>Beschreibung: <?php echo $event["edesc"]; ?></li>
-                    <li>Status: <?php echo $event["estat"]; ?></li>
-                    <li>Moderator: <?php echo $event["emod"]; ?></li>
-                </ul>
-            </div>
-        </div>
+    <div id="active_events" class="old_events">
+        <h3>Aktive Events</h3>
         <?php
-    }
-    ?>
+        foreach ($accEvents as $event) {
+            ?>
+            <div class="event_card" data-id="<?php echo $event['id']; ?>">
+                <div class="event_description">
+                    <ul>
+                        <li>Event Name: <?php echo $event["ename"]; ?></li>
+                        <li>Start: <?php echo $event["estart"]; ?></li>
+                        <li>Ende: <?php echo $event["eend"]; ?></li>
+                        <li>Ort: <?php echo $event["eplace"]; ?></li>
+                        <li>Beschreibung: <?php echo $event["edesc"]; ?></li>
+                        <li>Status: <?php echo $event["estat"]; ?></li>
+                        <li>Moderator: <?php echo $event["emod"]; ?></li>
+                    </ul>
+                </div>
+                <div class="event_buttons">
+                    <a href="javascript:" class="event_deactivate event_button">Event deaktivieren</a>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+    <div id="denied_events" class="old_events">
+        <h3>Abgelehnte Events</h3>
+        <?php
+        foreach ($denEvents as $event) {
+            ?>
+            <div class="event_card" data-id="<?php echo $event['id']; ?>">
+                <div class="event_description">
+                    <ul>
+                        <li>Event Name: <?php echo $event["ename"]; ?></li>
+                        <li>Start: <?php echo $event["estart"]; ?></li>
+                        <li>Ende: <?php echo $event["eend"]; ?></li>
+                        <li>Ort: <?php echo $event["eplace"]; ?></li>
+                        <li>Beschreibung: <?php echo $event["edesc"]; ?></li>
+                        <li>Status: <?php echo $event["estat"]; ?></li>
+                        <li>Moderator: <?php echo $event["emod"]; ?></li>
+                    </ul>
+                </div>
+                <div class="event_buttons">
+                    <a href="javascript:" class="event_reactivate event_button">Event reaktivieren</a>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
 
 
 </div>

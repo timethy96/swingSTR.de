@@ -61,7 +61,7 @@ if (isset($_SESSION['uname'])){
         $errors['database'] = "Error: " . $sql . "<br>" . $conn->error;
     } else {
 
-        if ($echoice == "2"){
+        if ($echoice == "2" && $ereason != ''){
 
             $sql = "SELECT email, ename, estart, eend, eplace, edesc FROM swingstrdb WHERE id = $eid";
             

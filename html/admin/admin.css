@@ -79,3 +79,12 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     display:none;
 }
+
+.old_events {
+    width:49%;
+    display: inline-block;
+}
+
+.old_events .event_card {
+    width: 90%;
+}

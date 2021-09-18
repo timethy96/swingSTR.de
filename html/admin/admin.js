@@ -34,6 +34,22 @@ function process_event(){
     } else if (choiceButton == "event_deny") {
         $(".event_button").hide();
         $(".deny_reason").css("display", "inline");
+    } else if (choiceButton == "event_deactivate") {
+        $(this).siblings(".event_load").css("display","block");
+        var formData = {
+            id: eventID,
+            choice: '2',
+            reason: '',
+        };
+        postChoice(formData);
+    } else if (choiceButton == "event_reactivate") {
+        $(this).siblings(".event_load").css("display","block");
+        var formData = {
+            id: eventID,
+            choice: '1',
+            reason: '',
+        };
+        postChoice(formData);
     }
 }
 
