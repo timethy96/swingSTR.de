@@ -129,6 +129,7 @@ if ($conn->connect_error) {
     foreach ($newEvents as $event) {
         ?>
         <div class="event_card" data-id="<?php echo $event['id']; ?>">
+            <div class="event_load"></div>
             <div class="event_description">
                 <ul>
                     <li>E-Mail: <?php echo $event["email"]; ?></li>

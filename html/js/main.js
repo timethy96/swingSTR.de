@@ -37,6 +37,7 @@ function add_event_01(e) {
         encode: true,
         error: function (a,b,c){ console.log(a+b+c)},
       }).done(function (data) {
+        console.log(data);
         var data_parse = JSON.parse(data);
         if (data_parse["success"]){
           $('#overlay_content').html(data_parse["message"]);

@@ -69,3 +69,10 @@ body {
     display: block;
     margin: 2px auto;
 }
+
+.event_load{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}

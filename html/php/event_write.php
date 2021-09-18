@@ -121,10 +121,10 @@ if (empty($errors)) {
         $conn->close();
     }
 
-    
+    $data["edata"] = json_encode("{email:$email,ename:$ename,edate:$edate,etimee:$etimee,etimeb:$etimeb,eplace:$eplace,edesc:$edesc,estart:$estart,eend:$eend}");
+
 }
 
-$data["edata"] = json_encode("{email:$email,ename:$ename,edate:$edate,etimee:$etimee,etimeb:$etimeb,eplace:$eplace,edesc:$edesc,estart:$estart,eend:$eend}");
 
 if (!empty($errors)) {
     $data['success'] = false;
