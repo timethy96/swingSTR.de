@@ -29,6 +29,23 @@ function getPWhash($usr){
     return FALSE;
 }
 
+function httpPost($url, $data)
+{
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($curl);
+    curl_close($curl);
+    return $response;
+}
+
+function getCaptchaSecret(){
+    $fn = fopen($_ENV['HCAPTCHA_KEY_FILE'],"r");
+    $key = fgets($fn);
+    fclose($fn);
+    return $key;
+}
 
 
 
@@ -39,24 +56,29 @@ if(isset($_POST['submit'])){
     $username = clean($_POST['username']);
     $password = clean($_POST['password']);
 
-// If username and password are not empty
-    if ($username != "" && $password != ""){
+    $captchaData = array('response' => $_POST['h-captcha-response'], 'secret' => getCaptchaSecret());
+    $captchaResponse = json_decode(httpPost("https://hcaptcha.com/siteverify", $captchaData), true);
+    
+    if ($captchaResponse["success"]) {
+    // If username and password are not empty
+        if ($username != "" && $password != ""){
 
-    // Query database to find user with matching username and password
-        $hash = getPWhash($username);
-        if ($hash){
-            $hashpw = hash('sha256',$password);
-            if ($hash == $hashpw) {
-                $_SESSION['uname'] = $username;
+        // Query database to find user with matching username and password
+            $hash = getPWhash($username);
+            if ($hash){
+                $hashpw = hash('sha256',$password);
+                if ($hash == $hashpw) {
+                    $_SESSION['uname'] = $username;
+                } else {
+                    echo "Error! Invalid username and password.";
+                }
             } else {
-                echo "Error! Invalid username and password.";
+            
+            // Display failed message
+                    echo "Error! Invalid username and password.";
             }
-        } else {
-        
-        // Display failed message
-                echo "Error! Invalid username and password.";
-        }
 
+        }
     }
 
 }
@@ -84,12 +106,13 @@ if (!isset($_SESSION['uname'])){
         <div>
             <input type="password" class="textbox" id="password" name="password" placeholder="Password"/>
         </div>
+        <div class="h-captcha" data-sitekey="027fb1df-5ecd-4ac6-a20c-53208b082a83"></div>
         <div>
             <input type="submit" value="Submit" name="submit" id="submit" />
         </div>
     </div>
 </form>
-
+<script src="https://js.hcaptcha.com/1/api.js?hl=de" async defer></script>
 <?php
 } elseif ($_SESSION['uname']) {
 
