@@ -134,6 +134,9 @@ if ($conn->connect_error) {
     <div id="usr_login">Hallo <?php echo $_SESSION['uname']; ?>! Du hast dich erfolgreich eingeloggt.</div>
     <h2>Neue Anfragen</h2>
     <?php
+    if ($newEvents->num_rows == 0) {
+        echo "Keine neuen Events verfügbar!";
+    }
     foreach ($newEvents as $event) {
         ?>
         <div class="event_card" data-id="<?php echo $event['id']; ?>">
@@ -166,9 +169,11 @@ if ($conn->connect_error) {
     <div id="active_events" class="old_events">
         <h3>Aktive Events</h3>
         <?php
+        
         foreach ($accEvents as $event) {
             ?>
             <div class="event_card" data-id="<?php echo $event['id']; ?>">
+                <div class="event_load"></div>
                 <div class="event_description">
                     <ul>
                         <li>Event Name: <?php echo $event["ename"]; ?></li>
@@ -194,6 +199,7 @@ if ($conn->connect_error) {
         foreach ($denEvents as $event) {
             ?>
             <div class="event_card" data-id="<?php echo $event['id']; ?>">
+                <div class="event_load"></div>
                 <div class="event_description">
                     <ul>
                         <li>Event Name: <?php echo $event["ename"]; ?></li>
