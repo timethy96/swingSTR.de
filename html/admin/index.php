@@ -19,7 +19,8 @@ function clean($str){
 }
 
 function getPWhash($usr){
-    $lines = file($_ENV['SWINGSTR_USERS_FILE']);
+    $file = file_get_contents($_ENV['SWINGSTR_USERS_FILE']);
+    $lines = explode("\n", $file);
     foreach($lines as $row) {
         $uspw = explode(':',$row);
         if (strtoupper($uspw[0]) == strtoupper($usr)){
@@ -58,7 +59,7 @@ if(isset($_POST['submit'])){
 
     $captchaData = array('response' => $_POST['h-captcha-response'], 'secret' => getCaptchaSecret());
     $captchaResponse = json_decode(httpPost("https://hcaptcha.com/siteverify", $captchaData), true);
-    
+
     if ($captchaResponse["success"]) {
     // If username and password are not empty
         if ($username != "" && $password != ""){
