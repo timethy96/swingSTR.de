@@ -68,6 +68,7 @@ foreach ($events as $event) {
     echo "DTEND;TZID=Europe/Berlin:".$eend."\r\n";
     echo "DTSTAMP;TZID=Europe/Berlin:".date("Ymd\THis")."\r\n";
     echo "LOCATION:".$event["eplace"]."\r\n";
+    echo "DESCRIPTION:".$event["edesc"]."\r\n";
     echo "END:VEVENT\r\n";
 }
 
