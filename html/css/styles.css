@@ -184,8 +184,16 @@ textarea {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-device-width: 500px) {
     form {
         width:90%;
+    }
+
+    body {
+        font-size: x-large;
+    }
+
+    h1, #add_event {
+        font-size: xx-large;
     }
 }

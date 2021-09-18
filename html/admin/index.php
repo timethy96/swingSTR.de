@@ -132,6 +132,7 @@ if ($conn->connect_error) {
 ?>
 
     <div id="usr_login">Hallo <?php echo $_SESSION['uname']; ?>! Du hast dich erfolgreich eingeloggt.</div>
+    <p>INFO: Es kann bis zu 12 Stunden dauern, bis Änderungen im Kalender angezeigt werden! (Google Beschränkung)</p>
     <h2>Neue Anfragen</h2>
     <?php
     if ($newEvents->num_rows == 0) {
