@@ -33,23 +33,42 @@ if ($conn->connect_error) {
 }
 
 
-?>
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//swingSTR//swingevents//DE
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-<?php
+
+echo "BEGIN:VCALENDAR\r\n";
+echo "VERSION:2.0\r\n";
+echo "PRODID:-//swingSTR//swingevents//DE\r\n";
+echo "CALSCALE:GREGORIAN\r\n";
+echo "METHOD:PUBLISH\r\n";
+echo "X-WR-CALNAME:swingSTR\r\n";
+echo "X-WR-TIMEZONE:Europe/Berlin\r\n";
+echo "BEGIN:VTIMEZONE\r\n";
+echo "TZID:Europe/Berlin\r\n";
+echo "X-LIC-LOCATION:Europe/Berlin\r\n";
+echo "BEGIN:DAYLIGHT\r\n";
+echo "TZOFFSETFROM:+0100\r\n";
+echo "TZOFFSETTO:+0200\r\n";
+echo "TZNAME:CEST\r\n";
+echo "DTSTART:19700329T020000\r\n";
+echo "END:DAYLIGHT\r\n";
+echo "BEGIN:STANDARD\r\n";
+echo "TZOFFSETFROM:+0200\r\n";
+echo "TZOFFSETTO:+0100\r\n";
+echo "TZNAME:CET\r\n";
+echo "DTSTART:19701025T030000\r\n";
+echo "END:STANDARD\r\n";
+echo "END:VTIMEZONE\r\n";
+
 foreach ($events as $event) {
     $estart = date("Ymd\THis", strtotime($event["estart"]));
     $eend = date("Ymd\THis", strtotime($event["eend"]));
-    echo "BEGIN:VEVENT\n";
-    echo "SUMMARY:".$event["ename"]."\n";
-    echo "UID:".$event["id"]."\n";
-    echo "DTSTART;TZID=Europe/Berlin:".$estart."\n";
-    echo "DTEND;TZID=Europe/Berlin:".$eend."\n";
-    echo "LOCATION:".$event["eplace"]."\n";
-    echo "END:VEVENT\n";
+    echo "BEGIN:VEVENT\r\n";
+    echo "SUMMARY:".$event["ename"]."\r\n";
+    echo "UID:".$event["id"]."@swingSTR.de\r\n";
+    echo "DTSTART;TZID=Europe/Berlin:".$estart."\r\n";
+    echo "DTEND;TZID=Europe/Berlin:".$eend."\r\n";
+    echo "DTSTAMP;TZID=Europe/Berlin:".date("Ymd\THis")."\r\n";
+    echo "LOCATION:".$event["eplace"]."\r\n";
+    echo "END:VEVENT\r\n";
 }
-?>
-END:VCALENDAR
+
+echo "END:VCALENDAR\r\n";
