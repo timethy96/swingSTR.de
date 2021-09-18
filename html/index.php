@@ -48,7 +48,7 @@ $lang = 'de';
     </div>
 
     <div id="gcal">
-        <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=5eata97e5pmn9tma5c36ff5bqt54kbn3@import.calendar.google.com&src=swingandcake@gmail.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
+        <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=jl64g1ck3s2evbcqaq22hhturo@group.calendar.google.com&src=swingandcake@gmail.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
     </div>
 
     <footer>
