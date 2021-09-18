@@ -9,6 +9,7 @@ body {
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0px 0px 5px lightgrey;
+    position: relative;
 }
 
 .event_description{
@@ -75,4 +76,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: 9;
+    background-color: rgba(0, 0, 0, 0.8);
+    display:none;
 }

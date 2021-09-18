@@ -16,6 +16,7 @@ function process_event(){
     var choiceButton = this.className.split(/\s+/)[0];
     var eventID = $(this).parents(".event_card").attr("data-id");
     if (choiceButton == "event_accept") {
+        $(this).siblings(".event_load").css("display","block");
         var formData = {
             id: eventID,
             choice: '1',
@@ -23,6 +24,7 @@ function process_event(){
         };
         postChoice(formData);
     } else if (choiceButton == "event_spam") {
+        $(this).siblings(".event_load").css("display","block");
         var formData = {
             id: eventID,
             choice: '2',
@@ -36,8 +38,9 @@ function process_event(){
 }
 
 function submit_reason(e){
-    var eventID = $(this).parents(".event_card").attr("data-id");
     e.preventDefault();
+    $(this).siblings(".event_load").css("display","block");
+    var eventID = $(this).parents(".event_card").attr("data-id");
     var formData = {
         id: eventID,
         choice: '2',
