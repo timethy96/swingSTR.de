@@ -12,6 +12,8 @@ $lang = 'de';
     <meta name="description" content="swingSTR | Der offene Swing-Event-Kalender für Stuttgart und Umgebung | Swing | Lindy Hop | Charleston | Solo Jazz | Balboa | Shag | Boogie Woogie">
     <meta name="author" content="Timo Bilhöfer">
 
+    <link rel="canonical" href="https://swingSTR.de" />
+
     <meta property="og:image:width" content="279">
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://swingSTR.de/og/og-image.jpg">
