@@ -61,7 +61,7 @@ $lang = 'de';
         <p id="overlay_content">test</p>
     </div>
 
-    <script async src="https://offen.bilhoefer.de/script.js" data-account-id="752dca05-df19-490a-92a5-14c5e4089930"></script>
+    <script async src="https://offen.bilhoefer.de/script.js" data-account-id="7983b615-6b2a-4f8d-83db-b914ebc81fb7"></script>
     <script src="https://js.hcaptcha.com/1/api.js?hl=de&render=explicit" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
