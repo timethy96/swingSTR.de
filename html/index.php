@@ -2,6 +2,18 @@
 
 $lang = 'de';
 
+function clean($str){
+    $str = mb_convert_encoding($str, 'UTF-8', 'UTF-8');
+    $str = htmlentities($str, ENT_QUOTES, 'UTF-8');
+    return $str;
+}
+
+if(isset($_REQUEST["tab"])){
+    $curTab = clean($_REQUEST["tab"]);
+} else {
+    $curTab = "events";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
@@ -43,12 +55,29 @@ $lang = 'de';
     </header>
 
     <div id="cat_tabs">
-        <a class="cat_tab active" id="tab_events" href="javascript:">Events</a>
-        <a class="cat_tab" id="tab_kurse" href="javascript:">Kurse</a>
+        <a class="cat_tab <?php if ($curTab == 'events') {echo "active";};?>" id="tab_events" href="javascript:">Events</a>
+        <a class="cat_tab <?php if ($curTab == 'kurse') {echo "active";};?>" id="tab_kurse" href="javascript:">Kurse</a>
+        <a class="cat_tab <?php if ($curTab == 'alle') {echo "active";};?>" id="tab_alle" href="javascript:">Alle Einträge</a>
     </div>
 
     <div id="gcal">
-        <iframe src="https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=jl64g1ck3s2evbcqaq22hhturo@group.calendar.google.com&src=swingandcake@gmail.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin"></iframe>
+        <iframe src="
+        <?php
+        switch ($curTab) {
+            case 'events':
+                echo 'https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=jl64g1ck3s2evbcqaq22hhturo@group.calendar.google.com&src=swingandcake@gmail.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin';
+                break;
+            case 'kurse':
+                echo 'https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=kja74l310d5sg6rnpcns38k3fk@group.calendar.google.com&src=kontakt@swing-stuttgart.de&src=nqj3q2taqm1aike4i6opvlt37o@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin';
+                break;
+            case 'alle':
+                echo 'https://www.google.com/calendar/embed?showTitle=0&wkst=2&bgcolor=%23ffffff&src=jl64g1ck3s2evbcqaq22hhturo@group.calendar.google.com&src=swingandcake@gmail.com&src=a2vipdbb7ghsdk71sfblvivs3k@group.calendar.google.com&src=kja74l310d5sg6rnpcns38k3fk@group.calendar.google.com&src=kontakt@swing-stuttgart.de&src=nqj3q2taqm1aike4i6opvlt37o@group.calendar.google.com&color=%235A6986&ctz=Europe%2FBerlin';
+                break;
+            default:
+                echo 'ERROR loading calendar!';
+                break;
+        }
+        ?>"></iframe>
     </div>
 
     <footer>
